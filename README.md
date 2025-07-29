@@ -1,4 +1,4 @@
-# 🌌 BIGNEXUS — Portfólio Cypherpunk
+# 🌌 BIGNEXUS — Portfólio
 
 ![Banner](https://bignexuss.github.io/BigNexus/favicon.ico)
 
