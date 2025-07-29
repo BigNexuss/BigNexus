@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Cypherpunk</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .rain-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+            background: url('img/Cyberpunk Gif - IceGif.gif') center/cover no-repeat;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #6a0dad;
+            padding-bottom: 2rem;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #6a0dad;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 20px rgba(106, 13, 173, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #6a0dad;
+            text-shadow: 0 0 10px rgba(106, 13, 173, 0.7);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .syntax-team {
+            background-color: #6a0dad;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+            animation: glow 2s ease-in-out infinite alternate;
+            transition: all 0.3s ease;
+        }
+
+        .syntax-team:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(106, 13, 173, 0.7);
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 5px #fff, 0 0 10px rgba(106, 13, 173, 0.7);
+            }
+            to {
+                box-shadow: 0 0 15px #fff, 0 0 20px rgba(106, 13, 173, 0.9);
+            }
+        }
+
+        section {
+            margin-bottom: 3rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            border-radius: 5px;
+            border-left: 3px solid #6a0dad;
+        }
+
+        h2 {
+            color: #6a0dad;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #6a0dad, transparent);
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: rgba(20, 20, 20, 0.8);
+            padding: 1.5rem;
+            border-radius: 5px;
+            border-top: 2px solid #6a0dad;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(106, 13, 173, 0.3);
+        }
+
+        .service-card h3 {
+            color: #6a0dad;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #6a0dad;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .cypher-text {
+            font-family: 'Courier New', monospace;
+            color: #fff;
+            text-shadow: 0 0 5px #6a0dad;
+        }
+
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #6a0dad, 0 0 20px #6a0dad;
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #6a0dad, 0 0 40px #6a0dad;
+            }
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            color: #fff;
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            color: #6a0dad;
+            text-shadow: 0 0 10px rgba(106, 13, 173, 0.7);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .contact-icon {
+            color: #6a0dad;
+            font-size: 1.2rem;
+            width: 25px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .services {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="rain-background"></div>
+
+    <div class="container">
+        <header>
+            <img src="img/images (1).jpg" alt="Foto de perfil" class="profile-pic">
+            <h1 class="cypher-text glow">𝖇𝖎𝖌 𝖓𝖊𝖝𝖚𝖘</h1>
+            <p class="tagline">Dev Full-Stack | Hacker Ético | Web Desenvolvimento</p>
+            <div class="syntax-team">
+                <a href="https://naoeocask.github.io/SYNTAXTEAM/" target="_blank" style="color: white; text-decoration: none;">
+                    Membro da SyntaxTeam
+                </a>
+            </div>
+            <div class="social-links">
+                <a href="https://discord.com/users/890706236784406559" target="_blank" class="social-link">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://www.instagram.com/big___isaac/" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </header>
+
+        <section id="about">
+            <h2 class="cypher-text">Sobre Mim</h2>
+            <p>Desenvolvedor full stack com paixão por segurança cibernética e privacidade digital. Acredito no poder transformador da tecnologia quando usada de forma ética e responsável.</p>
+            <p>Com anos de experiência no desenvolvimento de sistemas seguros e robustos, meu trabalho combina habilidades técnicas avançadas com uma filosofia cypherpunk de proteção à privacidade individual.</p>
+            <p>Atuo como consultor independente, ajudando empresas e indivíduos a navegar no complexo mundo digital com segurança e confiança.</p>
+        </section>
+
+        <section id="services">
+            <h2 class="cypher-text">Serviços</h2>
+            <div class="services">
+                <div class="service-card">
+                    <h3><i class="fas fa-laptop-code" style="margin-right: 10px;"></i> Web Designer</h3>
+                    <p>Criação de interfaces modernas e intuitivas com foco em experiência do usuário e acessibilidade. Designs responsivos que funcionam perfeitamente em qualquer dispositivo.</p>
+                    <p><i class="fas fa-code" style="margin-right: 8px;"></i> Tecnologias: HTML5, CSS3, JavaScript</p>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fas fa-shield-alt" style="margin-right: 10px;"></i> Hacker Ético</h3>
+                    <p>Testes de penetração e auditorias de segurança para identificar vulnerabilidades em seus sistemas antes que os criminosos o façam.</p>
+                    <p><i class="fas fa-tools" style="margin-right: 8px;"></i> Serviços: Pentesting, Análise de Vulnerabilidades, Treinamento em Segurança</p>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fas fa-server" style="margin-right: 10px;"></i> Dev Full Stack</h3>
+                    <p>Desenvolvimento completo de aplicações web, desde o backend até a interface do usuário, com arquiteturas escaláveis e seguras.</p>
+                    <p><i class="fas fa-cogs" style="margin-right: 8px;"></i> Tecnologias: Node.js, React, Python, SQL/NoSQL, Docker</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="social-links" style="margin-bottom: 1rem;">
+                <a href="https://discord.com/users/890706236784406559" target="_blank" class="social-link">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://www.instagram.com/big___isaac/" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+<p class="cypher-text">© Desenvolved By <span style="color: #974ace;">𝖇𝖎𝖌 𝖓𝖊𝖝𝖚𝖘</span>. Todos os direitos reservados.</p>
+            <p>Liberdade através da criptografia.</p>
+        </footer>
+    </div>
+</body>
+</html>
